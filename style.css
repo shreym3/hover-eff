@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: black;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+label{
+    position: relative;
+    margin: 2px;
+    display: inherit;
+}
+label:hover::before{
+    left: 80px;
+}
+
+label:hover .fas{
+    transition: 0.5s;
+}
+label:hover .fa-home{
+    color: rgb(252, 252, 128);
+}
+label:hover .fa-envelope{
+    color: rgb(241, 100, 100);
+}
+label:hover .fa-user{
+    color: rgb(243,161,10);
+}
+label:hover .fa-sign-in-alt{
+    color: rgb(21, 185, 240);
+}
+label a::before{
+    position: absolute;
+    content: attr(data-text);
+    z-index: -1;
+    color: #fff;
+}
+label:nth-child(1){
+    --menu-link-active-color: rgb(252, 252, 128);
+}
+label:nth-child(2){
+    --menu-link-active-color: rgb(241, 100, 100);
+}
+label:nth-child(3){
+    --menu-link-active-color: rgb(243, 161, 10);
+}
+label:nth-child(4){
+    --menu-link-active-color: rgb(21, 185, 240);
+}
+label::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -1rem;
+    width: 0.25rem;
+    height: 100%;
+    background: var(--menu-link-active-color);
+    transition: 1.6s;
+    margin: 5px;
+}
+label a{
+    position: relative;
+    background: linear-gradient(var(--menu-link-active-color) 0 100%) left/0 no-repeat;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-size 0.45s 0.04s;
+}
+i{
+    color: #fff;
+    font-size: 15px;
+    float: right;
+    margin: 4px 0px 0px 10px;
+}
